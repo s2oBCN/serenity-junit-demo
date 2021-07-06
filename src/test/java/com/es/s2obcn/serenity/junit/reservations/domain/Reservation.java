@@ -2,7 +2,6 @@ package com.es.s2obcn.serenity.junit.reservations.domain;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Builder

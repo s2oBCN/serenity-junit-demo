@@ -2,7 +2,6 @@ package com.es.s2obcn.serenity.junit.reservations.tests;
 
 import com.es.s2obcn.serenity.junit.reservations.domain.Reservation;
 import com.es.s2obcn.serenity.junit.reservations.domain.ReservationDataBuilder;
-import com.es.s2obcn.serenity.junit.reservations.pages.ReservationListPage;
 import com.es.s2obcn.serenity.junit.reservations.services.ReservationService;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
@@ -28,8 +27,8 @@ public class ReservationTest extends BaseTest {
         reservationService.addReservations(givenReservations);
 
         // Then
-        List<Reservation> actualReservations = reservationService.getReservationList();
-        assertThat(actualReservations).as("Reservation list")
+        assertThat(reservationService.getReservationList())
+                .as("Reservation list")
                 .usingFieldByFieldElementComparator()
                 .containsExactlyElementsOf(List.of(givenReservations));
     }
